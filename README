@@ -1,14 +1,29 @@
-To use these generator templates I recommend adding this function to your bash profile.
+  <div id="readme" class="announce"><span class="name">README.rdoc</span><div class="wikistyle"><p>
+To use these generator templates I recommend adding this function to your
+bash profile.
 
+</p>
+<pre>
   function railsapp {
     template=$1
     appname=$2
     shift 2
     rails $appname -m http://github.com/ryanb/rails-templates/raw/master/$template.rb $@
   }
-
-You can then use this "railsapp" command instead of the traditional "rails" one. Simply pass the template name as the first argument:
-
+</pre>
+<p>
+You can then use this &quot;railsapp&quot; command instead of the
+traditional &quot;rails&quot; one. Simply pass the template name as the
+first argument:
+</p>
+<pre>
   railsapp base store
 
-That will generate a Rails app using the base.rb template found here. 
+</pre>
+<p>
+That will generate a Rails app using the base.rb template found here.
+</p>
+
+</div></div>
+
+    </div>
