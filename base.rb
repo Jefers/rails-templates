@@ -5,6 +5,8 @@ generate :nifty_layout
 gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com'
 rake "gems:install"
 rake "gems:unpack:dependencies"
+
+compass -r compass-colors -r fancy-buttons -f fancy-buttons compass_dir
  
 if yes?("Do you want to use attachment_fu?")
   plugin "attachment_fu", :git => "git://github.com/technoweenie/attachment_fu.git"
