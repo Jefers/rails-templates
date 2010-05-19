@@ -1,3 +1,5 @@
+load_template "http://github.com/Jefers/rails-templates/raw/master/authentication.rb"
+
 run "echo TODO > README"
 
 generate :nifty_layout
