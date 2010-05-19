@@ -3,7 +3,9 @@ run "echo TODO > README"
 generate :nifty_layout
 
 gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com'
-rake "gems:install"
+gem 'fancy-buttons', :version => '>=0.5.3'
+
+rake('gems:install', :sudo => true)
 rake "gems:unpack:dependencies"
  
 if yes?("Do you want to use attachment_fu?")
