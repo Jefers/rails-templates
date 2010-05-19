@@ -1,4 +1,3 @@
-
 generate :nifty_scaffold, "Contact salutation_id:integer  first_name:string initials:string surname:string mobile:string home:string email:string address:string address_2:string address_3:string town:string county:string postal_code:string country_id:integer"
 
 generate :nifty_scaffold, "Business name:string strap:string description:text street:string town:string open_times:string phone:string fax:string mobile:string website:string contact_id:integer email:string address:string address_2:string address_3:string city:string county:string postal_code:string country_id:integer"
@@ -7,9 +6,12 @@ generate :nifty_scaffold, "Listing name:string url:string phone:string address:s
 
 generate :model, "Mugshot parent_id:integer contact_id:integer content_type:string filename:string thumbnail:string size:integer width:integer height:integer"
 
-rake 'db:migrate'
+generate :controller, "welcome index"
+route "map.root :controller => 'welcome'"
 
 load_template "http://github.com/Jefers/rails-templates/raw/master/authentication.rb"
+
+rake 'db:migrate'
 
 run "echo TODO > README"
 
@@ -24,8 +26,7 @@ rake "gems:unpack:dependencies"
 if yes?("Do you want to use attachment_fu?")
   plugin "attachment_fu", :git => "git://github.com/technoweenie/attachment_fu.git"
 end
- 
- 
+  
 if yes?("Do you want to use Paperclip?")
   plugin "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 end
