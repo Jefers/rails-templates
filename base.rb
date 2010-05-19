@@ -18,10 +18,9 @@ run "echo TODO > README"
 generate :nifty_layout
 
 gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com'
+gem 'fancy-buttons', :version => '>=0.5.3'
 gem 'compass', :version => '>= 0.10.1'
 gem 'haml', :version => '>=3.0.4'
-gem 'fancy-buttons', :version => '>=0.5.3'
-
 rake('gems:install', :sudo => true)
 rake "gems:unpack:dependencies"
  
