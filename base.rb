@@ -45,6 +45,8 @@ if yes?("Do you want to use RSpec?")
   generate :rspec
 end
 
+run "./script/generate formtastic"
+
 git :init
 
 file ".gitignore", <<-END
