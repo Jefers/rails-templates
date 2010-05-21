@@ -4,6 +4,8 @@ generate :nifty_scaffold, "Business name:string strap:string description:text st
 
 generate :nifty_scaffold, "Listing name:string url:string phone:string address:string line2:string line3:string line4:string line5:string county:string post_code:string category:string cat2:string cat3:string cat4:string cat5:string cat6:string cat7:string cat8:string cat9:string cat10:string ca11:string cat12:string"
 
+generate :nifty_scaffold, "Category name:string description:text"
+
 generate :model, "Mugshot parent_id:integer contact_id:integer content_type:string filename:string thumbnail:string size:integer width:integer height:integer"
 
 generate :controller, "welcome index"
@@ -21,6 +23,7 @@ gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.git
 gem 'fancy-buttons', :version => '>=0.5.3'
 gem 'compass', :version => '>= 0.10.1'
 gem 'haml', :version => '>=3.0.4'
+gem 'formtastic', :version => '>=0.9.8'
 rake('gems:install', :sudo => true)
 rake "gems:unpack:dependencies"
  
