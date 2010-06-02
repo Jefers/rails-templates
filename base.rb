@@ -76,9 +76,9 @@ javascripts_dir = "public/javascripts"
 # relative_assets = true
  END
 
-
 run "touch tmp/.gitignore log/.gitignore vendor/.gitignore"
 run "cp config/database.yml config/example_database.yml"
+
 
 if yes?("ready to commit?")
 end
