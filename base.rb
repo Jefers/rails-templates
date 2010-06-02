@@ -59,6 +59,27 @@ config/database.yml
 db/*.sqlite3
 END
 
+if yes?("Do you want add a config.rb?")
+run "touch config.rb"
+end
+
+if yes?("Do you want change config.rb?")
+  file "config.rb", <<-END
+  require 'compass-colors'
+  require 'fancy-buttons'
+  # Require any additional compass plugins here.
+
+  # Set this to the root of your project when deployed:
+  http_path = "/"
+  css_dir = "public/stylesheets/compiled"
+  sass_dir = "src"
+  images_dir = "public/images"
+  javascripts_dir = "public/javascripts"
+  # To enable relative paths to assets via compass helper functions. Uncomment:
+  # relative_assets = true
+  END
+end
+
 run "touch tmp/.gitignore log/.gitignore vendor/.gitignore"
 run "cp config/database.yml config/example_database.yml"
 
