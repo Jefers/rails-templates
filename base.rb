@@ -14,7 +14,7 @@ route "map.root :controller => 'listing'"
 
 load_template "http://github.com/Jefers/rails-templates/raw/master/authentication.rb"
 
-rake 'db:migrate'
+#rake 'db:migrate'
 
 run "echo TODO > README"
 
@@ -27,6 +27,8 @@ gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.git
 gem 'searchlogic', :version => '>=2.4.19'
 gem 'formtastic', :version => '>=0.9.8'
 gem 'repeated_auto_complete'
+gem 'warden', :versionn=> '=0.10.7'
+gem 'devise', :version=> '=1.0.8'
 rake('gems:install', :sudo => true)
 rake "gems:unpack:dependencies"
  
@@ -82,8 +84,7 @@ http_images_dir = "src/images"
 run "touch tmp/.gitignore log/.gitignore vendor/.gitignore"
 run "cp config/database.yml config/example_database.yml"
 
-
-if yes?("ready to commit?")
-end
-
 git :add => ".", :commit => "-m 'initial commit'"
+
+if yes?("remember to run rake db:migrate after making the changes for Devise")
+end
