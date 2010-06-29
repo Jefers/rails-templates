@@ -4,12 +4,13 @@ generate :nifty_scaffold, "Business name:string strap:string description:text st
 
 generate :nifty_scaffold, "Category name:string description:text"
 
-generate :nifty_scaffold, "Listing name:string url:string phone:string address:string line2:string line3:string line4:string line5:string county:string post_code:string category_id:integer cat1:string cat2:string cat3:string cat4:string cat5:string cat6:string cat7:string cat8:string cat9:string cat10:string cat11:string cat12:string"
+generate :nifty_scaffold, "Listing name:string url:string phone:string address:string line2:string line3:string line4:string line5:string county:string post_code:string"
+
+generate :model, "CategoryListing listing_id:integer category_id:integer"
 
 generate :model, "Mugshot parent_id:integer contact_id:integer content_type:string filename:string thumbnail:string size:integer width:integer height:integer"
 
-generate :controller, "welcome index"
-route "map.root :controller => 'welcome'"
+route "map.root :controller => 'listing'"
 
 load_template "http://github.com/Jefers/rails-templates/raw/master/authentication.rb"
 
@@ -73,7 +74,9 @@ sass_dir = "src"
 images_dir = "public/images"
 javascripts_dir = "public/javascripts"
 # To enable relative paths to assets via compass helper functions. Uncomment:
-# relative_assets = true
+relative_assets = true
+#http_images_path = "public/images"
+http_images_dir = "src/images"
  END
 
 run "touch tmp/.gitignore log/.gitignore vendor/.gitignore"
