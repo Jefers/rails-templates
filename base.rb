@@ -52,19 +52,9 @@ end
 
 run "./script/generate formtastic"
 
-git :init
-
-file ".gitignore", <<-END
-.DS_Store
-log/*.log
-tmp/**/*
-config/database.yml
-db/*.sqlite3
-END
-
 run "touch config.rb"
 
- file "config.rb", <<-END
+ file "config.rb", <<-CONF
 require 'compass-colors'
 require 'fancy-buttons'
 # Require any additional compass plugins here.
@@ -79,12 +69,22 @@ javascripts_dir = "public/javascripts"
 relative_assets = true
 #http_images_path = "public/images"
 http_images_dir = "src/images"
- END
+CONF
 
 run "touch tmp/.gitignore log/.gitignore vendor/.gitignore"
 run "cp config/database.yml config/example_database.yml"
 
-git :add => ".", :commit => "-m 'initial commit'"
+git :init
 
+file ".gitignore", <<-IGNORE
+.DS_Store
+log/*.log
+tmp/**/*
+config/database.yml
+db/*.sqlite3
+IGNORE
+
+git :add => "."
+git :commit => "-a -m 'Initial commit'"
 if yes?("remember to run rake db:migrate after making the changes for Devise")
 end
