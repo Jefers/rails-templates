@@ -1,6 +1,7 @@
 if yes?("Do you want to use Devise?")
  
 generate "devise User"
+generate "devise Admin"
 
 file "config/environments/development.rb", <<-DEV
 config.cache_classes = false
