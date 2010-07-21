@@ -1,3 +1,6 @@
+rake 'db:migrate'
+generate :nifty_layout
+
 generate :nifty_scaffold, "Contact salutation_id:integer  first_name:string initials:string surname:string mobile:string home:string email:string address:string address_2:string address_3:string town:string county:string postal_code:string country_id:integer"
 
 generate :nifty_scaffold, "Business name:string strap:string description:text street:string town:string open_times:string phone:string fax:string mobile:string website:string contact_id:integer email:string address:string address_2:string address_3:string city:string county:string postal_code:string country_id:integer"
@@ -17,8 +20,6 @@ load_template "http://github.com/Jefers/rails-templates/raw/master/authenticatio
 #rake 'db:migrate'
 
 run "echo TODO > README"
-
-generate :nifty_layout
 
 gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com'
 #gem 'fancy-buttons', :version => '>=0.5.3'
@@ -86,5 +87,5 @@ IGNORE
 
 git :add => "."
 git :commit => "-a -m 'Initial commit'"
-if yes?("remember to run rake db:migrate after making the changes for Devise")
+if yes?("remember to run rake db:migrate after making the changes for Devise. Also check :nifty_layout")
 end
