@@ -1,4 +1,4 @@
-rake 'db:migrate'
+rake 'db:create'
 generate :nifty_layout
 
 generate :nifty_scaffold, "Contact salutation_id:integer  first_name:string initials:string surname:string mobile:string home:string email:string address:string address_2:string address_3:string town:string county:string postal_code:string country_id:integer"
