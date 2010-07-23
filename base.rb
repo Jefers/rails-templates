@@ -28,7 +28,7 @@ gem 'haml', :version => '>=3.0.4'
 gem 'searchlogic', :version => '>=2.4.19'
 gem 'formtastic', :version => '>=0.9.8'
 gem 'repeated_auto_complete'
-gem 'warden', :versionn=> '=0.10.7'
+gem 'warden', :version=> '=0.10.7'
 gem 'devise', :version=> '=1.0.8'
 rake('gems:install', :sudo => true)
 rake "gems:unpack:dependencies"
