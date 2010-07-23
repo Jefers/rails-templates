@@ -17,14 +17,14 @@ route "map.root :controller => 'listing'"
 
 load_template "http://github.com/Jefers/rails-templates/raw/master/authentication.rb"
 
-#rake 'db:migrate'
+rake 'db:migrate'
 
 run "echo TODO > README"
 
 gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com'
-#gem 'fancy-buttons', :version => '>=0.5.3'
-#gem 'compass', :version => '>= 0.10.1'
-#gem 'haml', :version => '>=3.0.4'
+gem 'fancy-buttons', :version => '>=0.5.3'
+gem 'compass', :version => '>= 0.10.1'
+gem 'haml', :version => '>=3.0.4'
 gem 'searchlogic', :version => '>=2.4.19'
 gem 'formtastic', :version => '>=0.9.8'
 gem 'repeated_auto_complete'
@@ -87,5 +87,3 @@ IGNORE
 
 git :add => "."
 git :commit => "-a -m 'Initial commit'"
-if yes?("remember to run rake db:migrate after making the changes for Devise. Also check :nifty_layout")
-end
