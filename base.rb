@@ -32,6 +32,12 @@ gem 'formtastic', :version => '>=0.9.8'
 gem 'repeated_auto_complete'
 gem 'warden', :version=> '=0.10.7'
 gem 'devise', :version=> '=1.0.8'
+gem 'RedCloth', :source => 'http://github.com/jgarber/redcloth.git'
+gem 'cancan', :version => '>=1.3.2'
+gem 'barby', :lib => 'barby', :version => '>= 0.3.2', :source => 'http://github.com/toretore/barby.git'
+gem 'rqrcode'
+
+
 rake('gems:install', :sudo => true)
 rake "gems:unpack:dependencies"
  
