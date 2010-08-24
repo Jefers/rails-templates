@@ -91,6 +91,9 @@ log/*.log
 tmp/**/*
 config/database.yml
 db/*.sqlite3
+.sass-cache/*
+public/images/barcodes/*
+public/assets/listings/*
 IGNORE
 
 git :add => "."
